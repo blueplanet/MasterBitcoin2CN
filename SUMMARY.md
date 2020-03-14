@@ -26,3 +26,4 @@
 * [附录6 比特币白皮书](appdx-bitcoinwhitepaper.md)
 * [附录7 隔离见证](appdx-segwit.md)
 * [附录8 染色币](appdx-colored_coins.md)
+
