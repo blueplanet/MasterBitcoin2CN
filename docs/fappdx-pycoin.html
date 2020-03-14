@@ -1,0 +1,555 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>附录4：pycoin库、实用密钥程序ku和交易程序tx · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="appdx-scriptops.html" />
+    
+    
+    <link rel="prev" href="appdx-bx.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="cn-preface.html">
+            
+                <a href="cn-preface.html">
+            
+                    
+                    中文版序言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="trans-preface.html">
+            
+                <a href="trans-preface.html">
+            
+                    
+                    译者序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="preface.html">
+            
+                <a href="preface.html">
+            
+                    
+                    序言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="second_edition_changes.html">
+            
+                <a href="second_edition_changes.html">
+            
+                    
+                    第二版更新内容
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="glossary.html">
+            
+                <a href="glossary.html">
+            
+                    
+                    词汇表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="ch01.html">
+            
+                <a href="ch01.html">
+            
+                    
+                    第一章介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="ch02.html">
+            
+                <a href="ch02.html">
+            
+                    
+                    第二章比特币原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="ch03.html">
+            
+                <a href="ch03.html">
+            
+                    
+                    第三章比特币核心
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="ch04.html">
+            
+                <a href="ch04.html">
+            
+                    
+                    第四章密钥和地址
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="ch05.html">
+            
+                <a href="ch05.html">
+            
+                    
+                    第五章钱包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="ch06.html">
+            
+                <a href="ch06.html">
+            
+                    
+                    第六章交易
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="ch07.html">
+            
+                <a href="ch07.html">
+            
+                    
+                    第七章高级交易和脚本
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="ch08.html">
+            
+                <a href="ch08.html">
+            
+                    
+                    第八章比特币网络
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="ch09.html">
+            
+                <a href="ch09.html">
+            
+                    
+                    第九章区块链
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="ch10.html">
+            
+                <a href="ch10.html">
+            
+                    
+                    第十章挖矿和共识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="ch11.html">
+            
+                <a href="ch11.html">
+            
+                    
+                    第十一章比特币安全
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="ch12.html">
+            
+                <a href="ch12.html">
+            
+                    
+                    第十二章比特币应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="appdx-bips.html">
+            
+                <a href="appdx-bips.html">
+            
+                    
+                    附录1：比特币改进提案（BIP）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="appdx-bitcore.html">
+            
+                <a href="appdx-bitcore.html">
+            
+                    
+                    附录2：Bitcore
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="appdx-bx.html">
+            
+                <a href="appdx-bx.html">
+            
+                    
+                    附录3：Bitcoin Explorer（bx）命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.22" data-path="fappdx-pycoin.html">
+            
+                <a href="fappdx-pycoin.html">
+            
+                    
+                    附录4：pycoin库、实用密钥程序ku和交易程序tx
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="appdx-scriptops.html">
+            
+                <a href="appdx-scriptops.html">
+            
+                    
+                    附录5 交易脚本的操作符、常量和符号
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="appdx-bitcoinwhitepaper.html">
+            
+                <a href="appdx-bitcoinwhitepaper.html">
+            
+                    
+                    附录6 比特币白皮书
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25" data-path="appdx-segwit.html">
+            
+                <a href="appdx-segwit.html">
+            
+                    
+                    附录7 隔离见证
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26" data-path="appdx-colored_coins.html">
+            
+                <a href="appdx-colored_coins.html">
+            
+                    
+                    附录8 染色币
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >附录4：pycoin库、实用密钥程序ku和交易程序tx</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x9644;&#x5F55;4&#xFF1A;pycoin&#x5E93;&#x3001;&#x5B9E;&#x7528;&#x5BC6;&#x94A5;&#x7A0B;&#x5E8F;ku&#x548C;&#x4EA4;&#x6613;&#x7A0B;&#x5E8F;tx">&#x9644;&#x5F55;4&#xFF1A;pycoin&#x5E93;&#x3001;&#x5B9E;&#x7528;&#x5BC6;&#x94A5;&#x7A0B;&#x5E8F;ku&#x548C;&#x4EA4;&#x6613;&#x7A0B;&#x5E8F;tx</h1>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="appdx-bx.html" class="navigation navigation-prev " aria-label="Previous page: 附录3：Bitcoin Explorer（bx）命令">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="appdx-scriptops.html" class="navigation navigation-next " aria-label="Next page: 附录5 交易脚本的操作符、常量和符号">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"附录4：pycoin库、实用密钥程序ku和交易程序tx","level":"1.22","depth":1,"next":{"title":"附录5 交易脚本的操作符、常量和符号","level":"1.23","depth":1,"path":"appdx-scriptops.md","ref":"appdx-scriptops.md","articles":[]},"previous":{"title":"附录3：Bitcoin Explorer（bx）命令","level":"1.21","depth":1,"path":"appdx-bx.md","ref":"appdx-bx.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"fappdx-pycoin.md","mtime":"2020-03-14T01:53:18.797Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-14T11:18:32.057Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
